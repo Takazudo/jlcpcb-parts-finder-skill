@@ -63,18 +63,23 @@ For other categories, use `list-categories` to find the appropriate ID.
    - Description
    - Package type
    - Stock availability
+   - Detail page URL for each part
 
 ## Output Format
 
 Results from query.js are formatted as:
 ```
 C{lcsc}: {mfr} - {description} ({package}, Stock: {stock})
+   → https://jlcpcb.com/partdetail/C{lcsc}
 ```
 
 Example:
 ```
 C5155561: PJ-393-8P - 3.5mm Headphone Jack 1A -20℃~+70℃ 20V Gold Phosphor Bronze SMD Audio Connectors (SMD, Stock: 1995)
+   → https://jlcpcb.com/partdetail/C5155561
 ```
+
+**Important:** Always include the URL in your response so users can view detailed specifications and datasheets.
 
 ## Tips
 

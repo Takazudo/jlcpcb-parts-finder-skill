@@ -77,7 +77,10 @@ try {
       console.log('No results found');
     } else {
       results.forEach(r => {
-        console.log(`C${r.lcsc}: ${r.mfr} - ${r.description || 'No description'} (${r.package}, Stock: ${r.stock})`);
+        const partNumber = `C${r.lcsc}`;
+        const url = `https://jlcpcb.com/partdetail/${partNumber}`;
+        console.log(`${partNumber}: ${r.mfr} - ${r.description || 'No description'} (${r.package}, Stock: ${r.stock})`);
+        console.log(`   → ${url}`);
       });
     }
 
