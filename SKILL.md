@@ -1,11 +1,11 @@
 ---
-name: jlcpcb
-description: Search the JLCPCB electronic components database (~7 million parts) for hardware/electronics projects. Use when the user needs to: (1) Find electronic components (resistors, capacitors, ICs, connectors, etc.), (2) Look up specific part numbers or manufacturers, (3) Find alternatives or equivalents for components, (4) Check component availability and stock at JLCPCB, (5) Get component specifications (package type, description, etc.), or (6) Search for parts for PCB assembly projects.
+name: jlcpcb-component-finder
+description: "Search the JLCPCB electronic components database (~7 million parts) for hardware/electronics projects. Use when the user needs to: (1) Find electronic components (resistors, capacitors, inductors, ICs, connectors, diodes, transistors, MOSFETs, op-amps, microcontrollers, sensors, LEDs, etc.), (2) Look up specific part numbers, LCSC numbers (C-prefix), or manufacturer part numbers, (3) Find alternatives or equivalents for components, (4) Check component availability and stock at JLCPCB/LCSC, (5) Get component specifications (package type, footprint, description), (6) Search for parts for PCB assembly (PCBA) projects, (7) Find SMD or through-hole components, (8) Look up voltage regulators (LDO, linear, switching), audio jacks, connectors, or any other electronic parts. Keywords: JLCPCB, LCSC, electronic components, PCB parts, SMT assembly, BOM, bill of materials, component sourcing."
 ---
 
 # JLCPCB Parts Finder
 
-Search the JLCPCB electronic components database for hardware/electronics projects.
+Search the JLCPCB electronic components database (~7 million parts) for hardware/electronics projects. Use when the user needs to: (1) Find electronic components (resistors, capacitors, ICs, connectors, etc.), (2) Look up specific part numbers or manufacturers, (3) Find alternatives or equivalents for components, (4) Check component availability and stock at JLCPCB, (5) Get component specifications (package type, description, etc.), or (6) Search for parts for PCB assembly projects.
 
 ## Database Location
 
@@ -15,28 +15,28 @@ If missing, user should download from https://yaqwsx.github.io/jlcparts/
 
 ## Query Script
 
-Use `~/.claude/skills/jlcpcb/query.js` for all database queries.
+Use `~/.claude/skills/jlcpcb-component-finder/query.js` for all database queries.
 
 ### List categories:
 ```bash
-node ~/.claude/skills/jlcpcb/query.js list-categories
+node ~/.claude/skills/jlcpcb-component-finder/query.js list-categories
 ```
 
 ### Search parts:
 ```bash
-node ~/.claude/skills/jlcpcb/query.js search-parts <category_id> [keyword] [limit]
+node ~/.claude/skills/jlcpcb-component-finder/query.js search-parts <category_id> [keyword] [limit]
 ```
 
 **Examples:**
 ```bash
 # Search for 3.5mm audio jacks
-node ~/.claude/skills/jlcpcb/query.js search-parts 208 "3.5" 10
+node ~/.claude/skills/jlcpcb-component-finder/query.js search-parts 208 "3.5" 10
 
 # Search for LDO regulators
-node ~/.claude/skills/jlcpcb/query.js search-parts 111 "LDO" 15
+node ~/.claude/skills/jlcpcb-component-finder/query.js search-parts 111 "LDO" 15
 
 # List all parts in a category (no keyword)
-node ~/.claude/skills/jlcpcb/query.js search-parts 208 "" 20
+node ~/.claude/skills/jlcpcb-component-finder/query.js search-parts 208 "" 20
 ```
 
 ## Common Categories
